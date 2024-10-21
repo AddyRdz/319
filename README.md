@@ -1,6 +1,11 @@
 ## SBA 319 Database Application
 
-### Installation Guides
+## Technology Used
+
+### Installation Guide
 * npm i express
 * npm i mongoose
 * npm i dotenv
+
+## Start Server
+

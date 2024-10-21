@@ -5,7 +5,14 @@ const usersRouter = new express.Router()
 
 // GET ALL USERS
 usersRouter.get('/', async (req, res) => {
-    res.send('Users')
+    // res.send('GET All Users')
+    try {
+        const users = await User.find()
+        res.send(users)
+    }catch (error){
+        console.log(error);
+        
+    }
 })
 
 

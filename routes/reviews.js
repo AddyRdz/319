@@ -5,9 +5,9 @@ const reviewsRouter = new express.Router()
 
 // GET ALL REVIEWS
 reviewsRouter.get('/', async (req, res) => {
-    // res.send('GET All Users')
+    // res.send('GET All Reviews')
     try {
-        const users = await Review.find()
+        const reviews = await Review.find()
         res.send(reviews)
     }catch (error){
         console.log(error);
@@ -16,7 +16,7 @@ reviewsRouter.get('/', async (req, res) => {
 })
 
 
-// CREATE NEW USERS
+// CREATE NEW REVIEWS
 reviewsRouter.post('/', async (req, res) => {
     try {
         const review = await Review.create(req.body)
@@ -28,7 +28,7 @@ reviewsRouter.post('/', async (req, res) => {
 })
 
 
-// EDIT USERS
+// EDIT REVIEWS
 reviewsRouter.put('/:id', async (req, res) => {
     try {
         const updateReview = await Review.findByIdAndUpdate(req.params.id, req.body, {new:true})
@@ -40,7 +40,7 @@ reviewsRouter.put('/:id', async (req, res) => {
 })
 
 
-// DELETE USERS
+// DELETE REVIEWS
 reviewsRouter.delete('/:id', async (req, res) => {
     try {
         const deleteReview = await Review.findByIdAndDelete(req.params.id)
